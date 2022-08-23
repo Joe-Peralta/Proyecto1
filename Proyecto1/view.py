@@ -26,4 +26,19 @@ def ano_nacimiento(request,edad):
 
 
 def template_1(request):
-    return render(request,'template1.html')
+    contexto = {
+        'nombre' : 'joel',
+        'edad'   :  32
+    }
+    return render(request,'template1.html', contexto)
+
+
+def template_2(request, nombre, edad):
+    contexto = {
+        'nombre' : nombre,
+        'edad'   :  edad,
+        'horaactual'  : datetime.now(),
+        'lista'  :  [1, 2, 3, 4, 5],
+        'diccionario' : {'Animal':"Perro"}
+    }
+    return render(request,'template1.html', contexto)

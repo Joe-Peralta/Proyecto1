@@ -8,5 +8,46 @@
 </head>
 <body>
     Este es mi primer mensaje desde una plantilla 
+    <br>
+    El nombre de la persona es: {{nombre}}
+    <br>
+    La edad de la persona es: {{edad}}
+    <br>
+    la fecha de ejecucion es : {{horaactual}}
+    <br>
+    mi lista es: {{lista}}
+    <br>
+    {%for numero in lista %}
+        {%if numero == 2 %}
+        <h3> Cuidado este numero es 2! </h3>
+        <br>
+        {% endif %}     
+    {%endfor%}  
+    
+    <br>
+
+    {%for numero in lista %}
+    Mi numero es : {{numero}}
+    
+    <br>
+
+    {% endfor %}
+
+    Mostrar el diccionario
+    {% for key, value in diccionario.items %}
+    la key es: {{key}} y el valor es: {{value}}
+    
+    <br>
+    {% endfor %}
+
+    {%if edad >= 18 %}
+    esta persona es mayor de edad
+    {%elif edad >= 13 %}
+    esta persona es un adolecente 
+    {% else %}
+    esta persona es un niño
+    {%endif%}
+    <br>
+
 </body>
 </html>
